@@ -11,3 +11,13 @@ def mode(nums):
         >>> mode([2, 2, 3, 3, 2])
         2
     """
+    counts = {num: nums.count(num) for num in nums}
+    mode = None
+    modeCount = None
+    for (num, count) in counts.items():
+        if mode == None or count > modeCount:
+            mode = num
+            modeCount = count
+        else:
+            continue
+    return mode 

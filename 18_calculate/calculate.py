@@ -26,3 +26,24 @@ def calculate(operation, a, b, make_int=False, message='The result is'):
         >>> calculate('foo', 2, 3)
         
     """
+    result = None
+    if type(a) is not int and type(a) is not float:
+        return None
+    elif type(b) is not int and type(b) is not float:
+        return None
+    elif operation not in ['add', 'subtract', 'multiply', 'divide']:
+        return None
+    else: 
+        if operation == 'add':
+            result = a + b
+        elif operation == 'subtract':
+            result = a - b
+        elif operation == 'multiply':
+            result = a * b
+        else:
+            result = a / b
+            
+        if make_int:
+            return f"{message} {round(result)}"
+        else:
+            return f"{message} {result}"
