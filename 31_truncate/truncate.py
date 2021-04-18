@@ -25,7 +25,7 @@ def truncate(phrase, n):
         '...'
     """
     if n < 3:
-        return 'Do not truncate to less than 3 characters.'
+        return 'Truncation must be at least 3 characters.'
     elif len(phrase) + 3 < n:
         return phrase
     else:
